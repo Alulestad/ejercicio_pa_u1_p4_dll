@@ -19,7 +19,7 @@ public class MatriculaRepoImpl implements MatriculaRepo {
 	}
 
 	@Override
-	public List<Matricula> buscarTodos() {
+	public List<Matricula> seleccionarTodos() {
 		// TODO Auto-generated method stub
 		return baseDatos;
 	}

@@ -42,12 +42,12 @@ public class EjercicioPaU1P4DllApplication  implements CommandLineRunner{
 		vehiculo.setModelo("Cher");
 		vehiculo.setPlaca("ABC123");
 		vehiculo.setPrecio(new BigDecimal(10000));
-		vehiculo.setTipo("manual");
+		vehiculo.setTipo("automatico");
 		vehiculoService.agregar(vehiculo);
 		
 		
 		System.out.println(vehiculoService.buscarPorPlaca("ABC123"));
-		vehiculo.setPrecio(new BigDecimal(29000));
+		vehiculo.setPrecio(new BigDecimal(30000));
 		vehiculo.setMarca("otra");
 		vehiculoService.actualizar(vehiculo);
 		

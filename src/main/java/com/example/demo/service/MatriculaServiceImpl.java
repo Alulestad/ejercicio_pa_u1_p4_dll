@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -41,8 +42,8 @@ public class MatriculaServiceImpl implements MatriculaService {
 			valorMatriculaBruto=precioVehiculo.multiply(new BigDecimal(0.15));
 		}
 		
-		System.out.println(valorMatriculaBruto.compareTo(new BigDecimal(3000))>0);
-		if (valorMatriculaBruto.compareTo(new BigDecimal(3000))>0) {
+		
+		if (valorMatriculaBruto.round(MathContext.DECIMAL32 ).compareTo(new BigDecimal(3000))>0) {
 			BigDecimal decuento= valorMatriculaBruto.multiply(new BigDecimal(0.09));
 			
 			valorMatriculaBruto=valorMatriculaBruto.subtract(decuento);
@@ -62,7 +63,7 @@ public class MatriculaServiceImpl implements MatriculaService {
 	@Override
 	public List<Matricula> buscarTodos() {
 		// TODO Auto-generated method stub
-		return matriculaRepo.buscarTodos();
+		return matriculaRepo.seleccionarTodos();
 	}
 
 }

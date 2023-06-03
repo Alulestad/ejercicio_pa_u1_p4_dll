@@ -7,6 +7,6 @@ import com.example.demo.repo.modelo.Matricula;
 public interface MatriculaRepo {
 	
 	public void insertar(Matricula matricula);
-	public List<Matricula> buscarTodos();
+	public List<Matricula> seleccionarTodos();
 
 }
